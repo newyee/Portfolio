@@ -1,0 +1,38 @@
+.header_box{
+  background-color: #0D2851;
+  
+}
+
+.color_red{
+  color:red;
+}
+.logo{
+  margin-left:123px;
+  margin-right:905px;
+}
+.user_name{
+  color:#fff;
+}
+.logout{
+  color:#fff;
+}
+.content{
+  width:500px;
+  margin:  auto;
+}
+.content form{
+  margin-bottom:35px;
+  margin-top:-13px;
+}
+.err{
+
+  color:red;
+  margin-bottom:-16px;
+}
+.success_msg{
+  color:blue;
+}
+.check_msg{
+  margin-top:50px;
+}
+
