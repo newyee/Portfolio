@@ -400,6 +400,13 @@ class ReserveController extends Controller
 			// dd($other);
 			// dd($/reserved_date);
 			$reserved_date_insert = str_replace(['年','月','日','時','分'],['-','-',' ', ':' , ''],$reserved_date_insert);
+			$dupulicate_data = [];
+			$dupulicate_data = Reservation::where('reservation_date', 'like', '%' . $reserved_date_insert . '%')->get()->toArray();
+
+			if(!empty($dupulicate_data)){
+				$err_msg = ['err_msg_first' => '認証に失敗しました','err_msg_secound' => '初めからやり直してください'];
+				return redirect('/')->withInput($err_msg);
+			}
 
 			// dd($reserved_date_insert);
 			$reservation_record = Reservation::create(
