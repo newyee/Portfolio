@@ -105,8 +105,11 @@
           <td class="other_td"><textarea name="other" maxlength="100"></textarea></td>
         </tr>
       </table>
-        <a class="back_button info_back_button" href="javascript:history.back()">戻る</a>
         <input class="check_input_form" type="submit" value="確認する">
+    </form>
+    <form class="back_reserve_time" action="{{ action('ReserveController@reserve_time') }}" method="post">
+      {{ csrf_field() }}
+      <input type="submit" class="back_button info_back_button" value="戻る">
     </form>
   </div>
 </div>

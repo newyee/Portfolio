@@ -382,7 +382,7 @@ th{
 table.input_info_table {
   border-collapse: collapse;
   border-spacing: 0;
-  width:600px;
+  width:618px;
   table-layout: fixed;
 }
 table.confirm_table{
@@ -430,6 +430,7 @@ table.confirm_table{
 }
 .input_info_box{
   text-align:center;
+  position:relative;
 }
 
 .info_table_form{
@@ -457,7 +458,7 @@ table .input_name_furigana{
   padding-right:0;
 }
 table .input_content_name_f{
-  margin-right:9px;
+  margin-right:7px;
   margin-left:3px;
   display:inline-block;
 }
@@ -489,10 +490,10 @@ table .other_th{
 }
 .info_back_button{
   margin-right: 58%;
-  margin-left: 0;
+  margin-left: 3px;
   display:inline-block;
   height:28px;
-  line-height:2.3;
+  line-height:2;
   width:112px;
 }
 .check_input_form{
@@ -503,6 +504,8 @@ table .other_th{
   height: 30px;
   color: #fff;
   text-shadow: 0 1px 0 #093b8d;
+  margin-top: 12px;
+  margin-left: 84%;
 }
 .check_input_form:hover{
   background:none;
@@ -650,3 +653,12 @@ table.confirm_table .other_td p{
   color: #fff;
   font-size: 15px;
 }
+.back_reserve_time{
+  width: 18%;
+  position: absolute;
+  top: 87%;
+  left: 5%;
+  margin-top:14px;
+}
+
+

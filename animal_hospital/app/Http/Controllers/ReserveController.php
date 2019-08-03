@@ -190,7 +190,17 @@ class ReserveController extends Controller
 
 		public function reserve_time(Request $request){
 			// dd($request->calendar_date);
-			$reserve_date = $request->calendar_date;
+			$reserve_date = '';
+			if(!$request->session()->has('reserve_date')){
+				$reserve_date = $request->calendar_date;
+				// セッションに保存
+				$request->session()->put('reserve_date',$reserve_date);
+
+			}else{
+
+				$reserve_date = $request->session()->get('reserve_date');
+
+			}
 			// dd($reserve_date);
 
 			// dd($reserve_date);
