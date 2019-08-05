@@ -80,9 +80,10 @@
   </div>
 </div>
 
-  <div class="reserved_time_back_button">
-    <a href="javascript:history.back()"><input class="back_button" type="button" value="戻る"></a>
-  </div>
+<form class="reserved_time_back_button" action="{{ action('ReserveController@reserve_date') }}" method="post">  
+      {{ csrf_field() }}
+      <input type="submit" class="back_button" value="戻る">
+</form>
 </div>
 
 
