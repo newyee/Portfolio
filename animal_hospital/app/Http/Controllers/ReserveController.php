@@ -191,16 +191,18 @@ class ReserveController extends Controller
 		public function reserve_time(Request $request){
 			// dd($request->calendar_date);
 			$reserve_date = '';
-			if(!$request->session()->has('reserve_date')){
-				$reserve_date = $request->calendar_date;
-				// セッションに保存
-				$request->session()->put('reserve_date',$reserve_date);
+			// $request->session()->forget('');
+			if(empty($request->calendar_date)){
+				
+				$reserve_date = $request->session()->get('reserve_date');
 
 			}else{
 
-				$reserve_date = $request->session()->get('reserve_date');
+				$reserve_date = $request->calendar_date;
+				$request->session()->put('reserve_date',$reserve_date);
 
 			}
+
 			// dd($reserve_date);
 
 			// dd($reserve_date);
@@ -347,6 +349,8 @@ class ReserveController extends Controller
 
 			$message = [
 				'other.required_if' => '種類(犬、猫など)にその他を指定した場合は、その他の項目に動物種名を入力してください。',
+				'first_name_furigana.katakana' => 'メイはカタカナで入力してください',
+				'last_name_furigana.katakana' => 'セイはカタカナで入力してください',
 			];
 			
 			$validator = Validator::make($request->all(),[
@@ -410,13 +414,6 @@ class ReserveController extends Controller
 			// dd($other);
 			// dd($/reserved_date);
 			$reserved_date_insert = str_replace(['年','月','日','時','分'],['-','-',' ', ':' , ''],$reserved_date_insert);
-			$dupulicate_data = [];
-			$dupulicate_data = Reservation::where('reservation_date', 'like', '%' . $reserved_date_insert . '%')->get()->toArray();
-
-			if(!empty($dupulicate_data)){
-				$err_msg = ['err_msg_first' => '認証に失敗しました','err_msg_secound' => '初めからやり直してください'];
-				return redirect('/')->withInput($err_msg);
-			}
 
 			// dd($reserved_date_insert);
 			$reservation_record = Reservation::create(
@@ -464,6 +461,14 @@ class ReserveController extends Controller
 				$reserved_date_insert = str_replace(['年','月','日','時','分'],['-','-',' ', ':' , ''],$reserved_date_insert);
 
 				// dd($reserved_date_insert);
+				$dupulicate_data = [];
+				$dupulicate_data = Reservation::where('reservation_date', 'like', '%' . $reserved_date_insert . '%')->get()->toArray();
+
+				if(!empty($dupulicate_data)){
+					$err_msg = ['err_msg_first' => '認証に失敗しました','err_msg_secound' => '初めからやり直してください'];
+					return redirect('/')->withInput($err_msg);
+				}
+
 				$reservation_record = Reservation::create(
 					['reservation_date' => $reserved_date_insert,'owner_name' => $owner_name,'owner_name_furigana' => $owner_name_furigana,
 						'animal_name' => $animal_name,'animal_type' => $animal_type,'tel' => $tel,'mailaddress' => $mail,'other' => $other
@@ -496,7 +501,7 @@ class ReserveController extends Controller
 
 			
 			$err_msg = ['err_msg_first' => '認証に失敗しました','err_msg_secound' => '初めからやり直してください'];
-			
+
 			$reserved_time = $request->session()->get('reserved_time');
 			$reserved_date = $request->session()->get('reserved_date');
 			$reserved_dayOfWeek = $request->session()->get('reserved_dayOfWeek');
