@@ -5,6 +5,9 @@
 @section('heading','予約完了')
 
 @section('content')
+<div class="back_toppage_box">
+  <a class="back_toppage" href="/">＞トップページに戻る</a>
+</div>
 <div class="top_content">
   <ul class="page_list">
     <li>

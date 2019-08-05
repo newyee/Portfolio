@@ -107,7 +107,7 @@ ul{
 }
 
 .top_content{
-  width:42%;
+  width:48%;
   margin:0 auto;
 }
 
@@ -488,6 +488,12 @@ table .other_th{
 .info_table_form  input[type="text"]{
   border:1px solid #444;
 }
+.info_table_form  input[type="tel"]{
+  border:1px solid #444;
+}
+.info_table_form  input[type="email"]{
+  border:1px solid #444;
+}
 .info_back_button{
   margin-right: 58%;
   margin-left: 3px;
@@ -505,7 +511,7 @@ table .other_th{
   color: #fff;
   text-shadow: 0 1px 0 #093b8d;
   margin-top: 12px;
-  margin-left: 84%;
+  margin-left: 75%;
 }
 .check_input_form:hover{
   background:none;
@@ -540,8 +546,8 @@ table .other_th{
 .confirm_form{
   width: 100px;
   display: inline-block;
-  margin-left: 280px;
-  margin-top: 20px;
+  margin-left: 40%;
+  margin-top: 15px;
 }
 .confirm_form input[type="submit"]{
   width: 120px;
@@ -554,6 +560,7 @@ table .other_th{
   margin-left: 100px;
   width: 118px;
   cursor:default;
+  margin-top:15px;
 }
 .errors_box{
   width: 54%;
@@ -661,4 +668,14 @@ table.confirm_table .other_td p{
   margin-top:14px;
 }
 
-
+.confirm_button_box{
+  width: 108%;
+  display: flex;
+}
+.back_toppage{
+  margin-left:1%;
+  color:orange;
+}
+.back_toppage_box{
+  width:15%;
+}
