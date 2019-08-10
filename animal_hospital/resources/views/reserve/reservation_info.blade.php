@@ -1,6 +1,21 @@
 @extends('layouts.default')
 
 @section('title','情報入力')
+@section('script')
+
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script>
+
+  var oldtype = @json(old('animal_type'));
+  $(document).ready(function(){
+    // セレクトボックスの表示（リダイレクト時）
+    $('select[name="animal_type"] option[value="' + oldtype + '"]').prop('selected', true);
+  });
+
+</script>
+
+@endsection
 
 @section('heading','情報入力')
 
@@ -89,16 +104,16 @@
         <tr>
           <th>TEL<span class="required_check">必須</span></th>
           <td>
-            <input type="text" name="tel[]" maxlength="5" size="7" value="{{old('tel.0')}}">
+            <input type="tel" name="tel[]" maxlength="5" size="7" value="{{old('tel.0')}}">
             <span>ー</span>
-            <input type="text" name="tel[]" maxlength="5" size="7" value="{{old('tel.1')}}">
+            <input type="tel" name="tel[]" maxlength="5" size="7" value="{{old('tel.1')}}">
             <span>ー</span>
-            <input type="text" name="tel[]" maxlength="5" size="7" value="{{old('tel.2')}}">
+            <input type="tel" name="tel[]" maxlength="5" size="7" value="{{old('tel.2')}}">
           </td>
         </tr>
         <tr>
           <th>メールアドレス<span class="required_check">必須</span></th>
-          <td class="mail_td"><input type="text" name="mail" value="{{old('mail')}}"></td>
+          <td class="mail_td"><input type="email" name="mail" value="{{old('mail')}}"></td>
         </tr>
         <tr>
           <th class="other_th">その他<p class="other_description"><span class="color_red">※</span>動物種名でその他を入力された方は動物種名を入力してください</p></th>

@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>@yield('title')</title>
   <link rel="stylesheet" href="/animal_hospital/public/css/styles.css">
+  @yield('script')
 </head>
 <body>
   <header>
