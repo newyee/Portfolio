@@ -1,0 +1,69 @@
+[2019-07-05 13:00:44] local.ERROR: Maximum execution time of 30 seconds exceeded {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Maximum execution time of 30 seconds exceeded at C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider.php:3)
+[stacktrace]
+#0 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(137): Symfony\\Component\\Debug\\Exception\\FatalErrorException->__construct()
+#1 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->fatalExceptionFromError()
+#2 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(0): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#3 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\composer\\ClassLoader.php(444): ()
+#4 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\composer\\ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#5 C:\\xampp\\xampp\\htdocs\\animal_hospital\\app\\Providers\\RouteServiceProvider.php(8): Composer\\Autoload\\ClassLoader->loadClass()
+#6 C:\\xampp\\xampp\\htdocs\\animal_hospital\\app\\Providers\\RouteServiceProvider.php(8): spl_autoload_call()
+#7 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\composer\\ClassLoader.php(444): ()
+#8 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\composer\\ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#9 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(670): Composer\\Autoload\\ClassLoader->loadClass()
+#10 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(670): spl_autoload_call()
+#11 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(604): Illuminate\\Foundation\\Application->resolveProvider()
+#12 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register()
+#13 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(584): Illuminate\\Foundation\\ProviderRepository->load()
+#14 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#15 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(210): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap()
+#16 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(162): Illuminate\\Foundation\\Application->bootstrapWith()
+#17 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(146): App\\Http\\Kernel->bootstrap()
+#18 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(116): App\\Http\\Kernel->sendRequestThroughRouter()
+#19 C:\\xampp\\xampp\\htdocs\\animal_hospital\\public\\index.php(55): App\\Http\\Kernel->handle()
+#20 C:\\xampp\\xampp\\htdocs\\animal_hospital\\public\\index.php(0): {main}()
+#21 {main}
+"} 
+[2019-07-05 13:00:49] local.ERROR: Maximum execution time of 30 seconds exceeded {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Maximum execution time of 30 seconds exceeded at C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\
+esbot\\carbon\\src\\Carbon\\Traits\\Difference.php:11)
+[stacktrace]
+#0 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(137): Symfony\\Component\\Debug\\Exception\\FatalErrorException->__construct()
+#1 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->fatalExceptionFromError()
+#2 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(0): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#3 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\composer\\ClassLoader.php(444): ()
+#4 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\composer\\ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#5 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\
+esbot\\carbon\\src\\Carbon\\Traits\\Date.php(503): Composer\\Autoload\\ClassLoader->loadClass()
+#6 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\
+esbot\\carbon\\src\\Carbon\\Traits\\Date.php(503): spl_autoload_call()
+#7 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\composer\\ClassLoader.php(444): ()
+#8 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\composer\\ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#9 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\
+esbot\\carbon\\src\\Carbon\\Carbon.php(493): Composer\\Autoload\\ClassLoader->loadClass()
+#10 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\
+esbot\\carbon\\src\\Carbon\\Carbon.php(493): spl_autoload_call()
+#11 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\composer\\ClassLoader.php(444): ()
+#12 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\composer\\ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#13 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\
+esbot\\carbon\\src\\Carbon\\Laravel\\ServiceProvider.php(35): Composer\\Autoload\\ClassLoader->loadClass()
+#14 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\
+esbot\\carbon\\src\\Carbon\\Laravel\\ServiceProvider.php(35): spl_autoload_call()
+#15 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\
+esbot\\carbon\\src\\Carbon\\Laravel\\ServiceProvider.php(26): Carbon\\Laravel\\ServiceProvider->updateLocale()
+#16 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): Carbon\\Laravel\\ServiceProvider->boot()
+#17 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array:{C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php:32}()
+#18 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(90): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure:C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php:30-34}()
+#19 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#20 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(576): Illuminate\\Container\\BoundMethod::call()
+#21 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(827): Illuminate\\Foundation\\Application->call()
+#22 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(810): Illuminate\\Foundation\\Application->bootProvider()
+#23 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(811): Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure:C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:809-811}()
+#24 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(811): array_walk()
+#25 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#26 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(210): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap()
+#27 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(162): Illuminate\\Foundation\\Application->bootstrapWith()
+#28 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(146): App\\Http\\Kernel->bootstrap()
+#29 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(116): App\\Http\\Kernel->sendRequestThroughRouter()
+#30 C:\\xampp\\xampp\\htdocs\\animal_hospital\\public\\index.php(55): App\\Http\\Kernel->handle()
+#31 C:\\xampp\\xampp\\htdocs\\animal_hospital\\public\\index.php(0): {main}()
+#32 {main}
+"} 

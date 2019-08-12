@@ -1,0 +1,685 @@
+body{ 
+  margin:0;
+}
+
+p{
+  margin:0;
+}
+
+ul{
+  list-style:none;
+}
+ .header_top {
+  width:100%;
+  height:45px;
+  background-color:#1625d9ad;
+  height:45px;
+  border-bottom:2px solid #497797;
+}
+.header_top a {
+  background:no-repeat;
+  display: block;
+  height:50px;
+  width:11%;
+  float:left;
+  background-image:url(../images/dog.svg);
+  background-size:contain;
+  margin-left:8px;
+}
+.header_top p{
+  padding-top:10px;
+  text-align:center;
+  color:white;
+  margin:0;
+  padding-right:11%;
+  font-weight:bold;
+}
+.clearfix:after{
+
+  content:"";
+  display:block;
+  height:0;
+  clear:both;
+  visibility:hidden;
+
+}
+
+.vets_number{
+  width:100%;
+  text-align:center;
+  background-color:#f8ce82; 
+  border-bottom:1px solid #8d8d88d6;
+}
+
+
+.font_bold{
+  font-weight: bold;
+}
+
+.vets_number p{
+  margin-right:10%;
+}
+
+.vets_number a{
+  margin-left:15px;
+}
+.purpose{
+  width:100%;
+  height:40px;
+  text-align:center;
+  background-color:#bebeb82e;
+  border-bottom:1px solid #aaaaa4b8;
+}
+.purpose p {
+  line-height:2.5;
+  
+}
+.black_circle_svg{
+  height: 20px;
+  display: block;
+  width: 20px;
+  background:url('../images/black_point.svg');
+}
+
+.circle_svg{
+  height: 20px;
+  display: block;
+  width: 20px;
+  background:url('../images/circle.svg');
+}
+
+.page_list{
+  display:flex;
+  justify-content: center;
+  padding:0;
+}
+.page_list li:not(:nth-child(3)):not(:nth-child(5)) i{
+  margin-left:16px;
+}
+.page_list li:nth-child(3) i{
+  margin-left:25px;
+}
+.page_list li:nth-child(5) i{
+  margin-left:30px;
+}
+
+.page_list p{
+  font-size:0.85em;
+}
+
+.top_content{
+  width:48%;
+  margin:0 auto;
+}
+
+.choose_purpose{
+  text-align:center;
+  font-size:18px;
+  margin-left:15px;
+}
+
+.choose_btn:not(:hover){
+  background: -webkit-linear-gradient(top, #f69000 50%, #fdb140);
+}
+
+.choose_btn{
+  width:70%;
+  text-align:left;
+  cursor:default;
+  margin: 0 auto;
+  margin-left: 55px;
+  margin-bottom: 8px;
+  color: #fff;
+  background-color: #ff5e00;
+  border-radius: 3px;
+  box-shadow: 0px 0px 2px #7e8183e6;
+  border:1px solid #c59336;
+  font-size:14px;
+  display:block;
+  text-decoration:none;
+  text-shadow:0 1px 0 #ba3a00;
+}
+.index_purpose_button{
+  width:93%;
+  margin-left:79px;
+  
+}
+
+.check_circle_svg{
+  height: 20px;
+  display: block;
+  width: 20px;
+  background-image:url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/PjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxMy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDE0OTQ4KSAgLS0+PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IiYjeDMwRUM7JiN4MzBBNDsmI3gzMEU0OyYjeDMwRkM7XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDIwIDIwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGNpcmNsZSBzdHlsZT0iZmlsbDojRkZFQkNEO3N0cm9rZTojRUM2QzFGO3N0cm9rZS13aWR0aDozOyIgY3g9IjEwIiBjeT0iMTAiIHI9IjguNSIvPjxsaW5lIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiMwREM0NDI7c3Ryb2tlLXdpZHRoOjM7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7IiB4MT0iNi42IiB5MT0iMTAuOCIgeDI9IjguOCIgeTI9IjEyLjgiLz48bGluZSBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMERDNDQyO3N0cm9rZS13aWR0aDozO3N0cm9rZS1saW5lY2FwOnJvdW5kOyIgeDE9IjE0LjMiIHkxPSI2LjkiIHgyPSI5LjEiIHkyPSIxMyIvPjwvc3ZnPg==");
+}
+
+.calendar_title{
+  text-align: center;
+  font-size:19px;
+}
+.reserve_explain_box{
+  text-align:center;
+  border:1px solid orange;
+  border-radius:3px;
+  width:611px;
+  margin:0 auto;
+}
+
+.reserve_explain_box p{
+  border-bottom:1px solid #c6c5c5;
+  background-color:#ffd17d;
+  font-size:20px;
+  margin-bottom:7px;
+}
+
+.explain_blue_circle{
+  color:#6ea1ff;
+  
+}
+.left_reserve_explain{
+  margin-right:90px;
+}
+.is_reservation{
+  margin:7px;
+}
+.right_reserve_explain{
+  display:inline-block;
+  margin-bottom:5px;
+} 
+
+.calendar_table{
+  border-collapse: collapse;
+  border: solid 2px orange;
+  width:100%;
+}
+
+.next_calendar{
+  display:inline-block;
+}
+.calendar_list_title {
+  text-align:center;
+  margin:10px 0;
+}
+.current_calendar_day{
+  display:inline-block;
+  text-align:center;
+  width:60%;
+  margin-left:63px;
+  font-size:19px;
+}
+.next_calendar input[type="submit"]{
+  padding:3px 38px;
+  background-color: orange;
+  border: solid 1px #aa7b34;
+  background: -webkit-linear-gradient(top, #faa200 50%, #ffba54);
+  /* color: #fff; */
+   border-radius: 3px; 
+}
+.next_calendar input[type="submit"]:hover{
+  background:none; 
+  background:-webkit-linear-gradient(top, #ec6b0f 50%, #cf8648)
+}
+
+.day{
+  background-color:#FFC746;
+}
+th{
+  font-weight:normal;
+}
+.sunday{
+  color:red;
+}
+.saturday{
+  color:#5796f4;
+}
+.calendar_td{
+  
+  border : 1px solid orange;
+  width:66px;
+  
+}
+
+.reserved_date{
+  text-align:center;
+  font-size:16px;
+  font-weight:800;
+}
+
+.calendar_day_p{
+  padding-left:5px;
+}
+.calendar_button:hover{
+  background:none;
+  background:linear-gradient(to bottom,#d3d2d2,silver 50%,#afafaf);
+  
+}
+
+.calendar_button{
+  background:linear-gradient(to bottom,#f3f3f3,#e2e2e2 50%,#d1d1d1);
+  background-color:#d1d1d1;
+  width: 53px;
+  height: 31px;
+  border: 1px solid silver;
+  border-radius:3px;
+  margin-left:18px;
+  color:#6ea1ff;
+  margin-bottom:3px;
+
+}
+.calendar_back_button{
+  text-align:center;
+}
+.reserved_time_back_button{
+  text-align:center;
+}
+.reserved_time_back_button .back_button{
+  line-height:1;
+}
+
+.back_button{
+  margin: 20px 180px;
+  color: white;
+  text-shadow: 0 1px 0 #8d0909;
+  background: linear-gradient(to bottom,#f07e7e,#ec5757 50%,#ff0000);
+  border: 1px solid #d1001d;
+  border-radius:3px;
+  font-size:14px;
+  text-decoration:none;
+  display:inline-block;
+  height:28px;
+  line-height:2.2;
+  width:112px;
+}
+
+
+.back_button:hover{
+  background:none;
+  background:linear-gradient(to bottom,#db0b0b,#bc3232 50%,#a82e2e);
+}
+
+.back_calendar{
+  width:14.5%;
+  display:inline-block;
+  margin-right:41px;
+}
+.back_calendar input[type="submit"]{
+  padding:3px 38px;
+  background-color: orange;
+  border: solid 1px #aa7b34;
+  background: -webkit-linear-gradient(top, #faa200 50%, #ffba54);
+  border-radius: 3px;
+}
+
+.back_calendar input[type="submit"]:hover{
+  background:none; 
+  background:-webkit-linear-gradient(top, #ec6b0f 50%, #cf8648);
+}
+.next_title_day{
+  width: 31%;
+  display: inline-block;
+  margin: 0 36% 0 11%;
+  font-size: 19px
+}
+.reservation_title_letter{
+  text-align:center;
+}
+.reservation_title_letter h3{
+  margin-bottom: 7px;
+  font-size: 18px;  
+}
+.reservation_title_letter p{
+  font-weight:600;
+}
+
+.is_reservation_time{
+  margin:7px;
+  color:red;
+}
+.reserve_time_list{
+  margin-left:50px;
+}
+.reserve_time_list p{
+  display:inline-block;
+
+}
+.reserve_time_list div{
+  margin-left:6px;
+}
+.reserve_status{
+  border: 1px solid orange;
+  margin-top:20px;
+  height:48px;
+
+}
+.reserve_status_left{
+  margin-right:34px;
+}
+.reserve_status p{
+  background-color: #ffce75;
+  padding: 3px 39px 0 39px;
+  line-height: 3;
+  height: 45px;
+  border-right:1px solid orange;
+}
+.reserve_status form{
+  display:inline-block;
+  width: 159px;
+  text-align: center;
+}
+
+.flex{
+  display: flex;
+}
+.reserved_time_button{
+  width:73px;
+  height:33px;
+  margin:8px 0;
+}
+.reserve_status .no_reservation{
+  background:none;
+  width: 159px;
+  text-align:center;
+  padding:0;
+  border-right:none;
+  color:red;
+} 
+
+table.input_info_table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width:618px;
+  table-layout: fixed;
+  margin:0 auto;
+}
+table.confirm_table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 524px;
+  margin: 0 auto;
+}
+.confirm_table th,td{
+  border: 1px solid #444;
+  padding: 3px 10px;
+  font-size: 14px;
+  height: 29px;
+ 
+}
+
+.confirm_table th{
+  padding: 3px 10px;
+  background-color: #eeeeee;
+  width: 150px;
+  text-align: right;
+  font-weight:bold;
+}
+.confirm_table td{
+  text-align:left;
+  margin: 10px 21px 9px 7px;
+}
+
+.input_info_table th, .input_info_table td {
+  border: 1px solid orange;
+  padding: 3px 10px;
+  font-size: 14px;
+  height: 34px;
+}
+.input_info_table th {
+  padding: 3px 10px;
+  background-color: #ffce75;
+  width: 231px;
+  text-align: right;
+  font-weight:bold;
+}
+.input_info_table td {
+  text-align:left;
+  margin: 10px 21px 9px 7px;
+}
+.input_info_box{
+  text-align:center;
+  position:relative;
+}
+
+.info_table_form{
+  
+  padding-left:35px;
+}
+.input_content_name{
+  margin-right: 16px;
+  display: inline-block;
+  margin-left: 5px;
+}
+table .input_name{
+  padding-left:5px;
+  padding-right:0;
+}
+.required_check{
+  color: red;
+  border: 1px solid red;
+  border-radius: 5px;
+  margin-left: 9px;
+  padding:1px;
+}
+table .input_name_furigana{
+  padding-left:0;
+  padding-right:0;
+}
+table .input_content_name_f{
+  margin-right:7px;
+  margin-left:3px;
+  display:inline-block;
+}
+table .animal_name_td input[type="text"]{
+  width:320px;
+}
+table .mail_td input[type="text"]{
+  width:320px;
+}
+table .other_td textarea{
+  width:320px;
+  height:63px;
+  resize:none;
+  border:1px solid #444;
+  
+}
+.other_description{
+  font-weight:normal;
+
+}
+.color_red{
+  color:red;
+}
+table .other_th{
+  height:80px;
+}
+.info_table_form  input[type="text"]{
+  border:1px solid #444;
+}
+.info_table_form  input[type="tel"]{
+  border:1px solid #444;
+}
+.info_table_form  input[type="email"]{
+  border:1px solid #444;
+}
+.info_back_button{
+  margin-left: 26%;
+  display:inline-block;
+  height:28px;
+  line-height:2;
+  width:112px;
+}
+.check_input_form{
+  background: -webkit-linear-gradient(top, #4898e3  50%, #007dcd);
+  border: 1px solid blue;
+  border-radius: 3px;
+  width: 18%;
+  height: 30px;
+  color: #fff;
+  text-shadow: 0 1px 0 #093b8d;
+  margin-top: 12px;
+  margin-left: 71%;
+}
+.check_input_form:hover{
+  background:none;
+  background:-webkit-linear-gradient(top, #0451e9  50%, #0247d1);
+}
+.registration_button{
+  background: -webkit-linear-gradient(top, #1180e7 50%, #0b7be3);
+  border: 1px solid blue;
+  border-radius: 3px;
+  width: 20%;
+  height: 30px;
+  color: #fff;
+  text-shadow: 0 1px 0 #093b8d;
+}
+.registration_button:hover{
+  background: -webkit-linear-gradient(top, #114fe7 50%, #0b53c6);
+  border: 1px solid blue;
+  border-radius: 3px;
+  width: 20%;
+  height: 30px;
+  color: #fff;
+  text-shadow: 0 1px 0 #093b8d;
+}
+.error_message{
+  list-style:none;
+}
+.confirm_title{
+  text-align: center;
+  margin:0 auto;
+  margin-bottom:12px;
+  font-size: 17px;
+}
+.confirm_form{
+  width: 100px;
+  display: inline-block;
+  margin-left: 36.5%;
+  margin-top: 15px;
+}
+.confirm_form input[type="submit"]{
+  width: 120px;
+  display: inline-block;
+}
+.confirm_back_button{
+  display: inline-block;
+  margin: 0;
+  text-align: center;
+  margin-left: 13%;
+  width: 118px;
+  cursor:default;
+  margin-top:15px;
+}
+.errors_box{
+  width: 54%;
+  /* height:107px; */
+  margin-left: 165px;
+  background-color: #ff6767;
+  font-size:15px;
+  text-align:left;
+}
+
+.error_list{
+  color:#fff;
+  padding:5px 0 5px 7px;
+
+}
+.complete_message{
+  text-align:center;
+}
+
+table.complete_table th{
+  background-color:#ffce75;
+  width:231px;
+}
+table.complete_table .other_td p{
+  height:70px;
+  word-wrap:break-word;
+  width:320px;
+}
+table.complete_table tr td{
+  width:320px;  
+}
+table.complete_table th, table.complete_table td{
+  border:1px solid orange;
+}
+table.confirm_table .other_td p{
+  height:70px;
+  word-wrap:break-word;
+  width:320px;
+}
+
+.top_login_title{
+  width:25%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom:10px;
+  margin-top:10px;
+}
+.login_table{
+  border-collapse: collapse;
+  border: solid 1px orange;
+  width:24%;
+  margin:0 auto;
+}
+.login_table th, .login_table td{
+  border: solid 1px orange;
+} 
+.login_table td{
+  width:193px;
+}
+.save_info_box{
+  text-align: center;
+  margin: 15px;
+}
+.login_submit_box{
+
+  text-align:center;
+
+}
+
+.login_submit_box input[type="submit"]{
+  background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#f3f3f3), color-stop(0.5, #e2e2e2), to(#d1d1d1));
+  text-shadow:0 1px 0 silver;
+  border:1px solid silver;
+  width:100px;
+  height:30px;
+  border-radius:3px;
+}
+
+.login_submit_box input[type="submit"]:hover{
+  background:none;
+  background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#b8b5b5), color-stop(0.5, #c4c1c1), to(#aaa7a7));
+}
+.login_table td input[type="text"]{
+  border:1px solid #444;
+  padding: 5px 5px;
+  width: 180px;
+}
+.login_table th{
+  background:#fce5bc;
+}
+.get_err_box{
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  background: #ff6f6f;
+  color: #fff;
+  font-size: 15px;
+}
+.back_reserve_time{
+  width: 18%;
+  position: absolute;
+  top: 87%;
+  left: 5.3%;
+  margin-top:14px;
+}
+
+.confirm_button_box{
+  width: 108%;
+  display: flex;
+}
+.back_toppage{
+  margin-left:1%;
+  color:orange;
+}
+.back_toppage_box{
+  width:15%;
+}
