@@ -683,3 +683,7 @@ table.confirm_table .other_td p{
 .back_toppage_box{
   width:15%;
 }
+.login_back_top{
+  margin-top:10px;
+  margin-left:10px;
+}

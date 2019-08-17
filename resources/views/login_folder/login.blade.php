@@ -7,7 +7,9 @@
 </head>
 <body>
   
-  
+  <div class="back_toppage_box login_back_top">
+    <a class="back_toppage" href="/">＞トップページに戻る</a>
+  </div>  
   <h3 class="top_login_title">〇〇〇動物病院 | ネット予約</h3>
   <div>
     <form action="#">
