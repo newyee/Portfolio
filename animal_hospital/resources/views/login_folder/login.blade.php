@@ -3,19 +3,13 @@
 <head>
   <meta charset="utf-8">
   <title>@yield('title')</title>
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="{{ asset('/css/styles.css') }}">
 </head>
 <body>
-  <header>
-    <div class="header_top">
-      <a class="svg_header_logo" href="{{url('/')}}"></a>
-      <p>〇〇〇動物病院</p>
-    </div>
-    <div class="clearfix vets_number">
-      <p><span class="font_bold">医院TEL</span><a href="000-0000-0000">000-0000-0000</a></p>
-    </div>
-  </header>
   
+  <div class="back_toppage_box login_back_top">
+    <a class="back_toppage" href="/">＞トップページに戻る</a>
+  </div>  
   <h3 class="top_login_title">〇〇〇動物病院 | ネット予約</h3>
   <div>
     <form action="#">
