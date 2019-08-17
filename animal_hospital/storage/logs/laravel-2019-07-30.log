@@ -1,0 +1,37 @@
+[2019-07-30 16:53:51] production.ERROR: SQLSTATE[HY000] [2002] 接続済みの呼び出し先が一定の時間を過ぎても正しく応答しなかったため、接続できませんでした。または接続済みのホストが応答しなかったため、確立された接続は失敗しました。
+ (SQL: select `reservation_date` from `reservations`)  
+[2019-07-30 16:54:50] production.ERROR: SQLSTATE[HY000] [2002] 接続済みの呼び出し先が一定の時間を過ぎても正しく応答しなかったため、接続できませんでした。または接続済みのホストが応答しなかったため、確立された接続は失敗しました。
+ (SQL: select `reservation_date` from `reservations`)  
+[2019-07-30 17:04:35] production.ERROR: Command "view:clear[" is not defined.
+
+Did you mean one of these?
+    cache:clear
+    config:clear
+    event:clear
+    optimize:clear
+    route:clear
+    view:cache
+    view:clear {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"view:clear[\" is not defined.
+
+Did you mean one of these?
+    cache:clear
+    config:clear
+    event:clear
+    optimize:clear
+    route:clear
+    view:cache
+    view:clear at C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\symfony\\console\\Application.php:652)
+[stacktrace]
+#0 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\symfony\\console\\Application.php(237): Symfony\\Component\\Console\\Application->find('view:clear[')
+#1 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\symfony\\console\\Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(90): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 C:\\xampp\\xampp\\htdocs\\animal_hospital\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(133): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 C:\\xampp\\xampp\\htdocs\\animal_hospital\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2019-07-30 17:06:21] production.ERROR: SQLSTATE[HY000] [2002] 接続済みの呼び出し先が一定の時間を過ぎても正しく応答しなかったため、接続できませんでした。または接続済みのホストが応答しなかったため、確立された接続は失敗しました。
+ (SQL: select `reservation_date` from `reservations`)  
+[2019-07-30 17:06:56] production.ERROR: SQLSTATE[HY000] [2002] 接続済みの呼び出し先が一定の時間を過ぎても正しく応答しなかったため、接続できませんでした。または接続済みのホストが応答しなかったため、確立された接続は失敗しました。
+ (SQL: select `reservation_date` from `reservations`)  
+[2019-07-30 17:39:06] production.ERROR: SQLSTATE[HY000] [2002] 接続済みの呼び出し先が一定の時間を過ぎても正しく応答しなかったため、接続できませんでした。または接続済みのホストが応答しなかったため、確立された接続は失敗しました。
+ (SQL: select `reservation_date` from `reservations`)  
