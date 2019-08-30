@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>validation</title>
+  <style>
+    .err_msg{
+      margin-top:0;
+      color:red;
+    }
+  
+  </style>
+
+</head>
+<body>
+  <h1>お問合せ画面</h1>
+  <h2>お問合せ内容を入力してください</h2>
+  <form method="post" action="" name="input_form">
+    <span class="err_msg" id="name_err"></span>
+    <p>(必須)名前<input type="text" name="name" id="input_name"></p>
+    <span class="err_msg" id="age_err"></span>
+    <p>(必須)年齢<input type="number" name="age" id="input_age"></p>
+    <span class="err_msg" id="color_err"></span>
+    <p>
+      好きな色
+      <input type="checkbox" name="color[]" value="red">赤
+      <input type="checkbox" name="color[]" value="green">緑
+      <input type="checkbox" name="color[]" value="blue">青
+      <input type="checkbox" name="color[]" value="yellow">黄色
+      <input type="checkbox" name="color[]" value="other">その他
+      <input type="checkbox" name="color[]" value="nothing">特になし
+    </p>
+    <input type="button" id="submit_btn" value="送信">
+
+  
+  </form>
+  <script>
+    document.addEventListener('DOMContentLoaded',function(){
+      document.getElementById('submit_btn').addEventListener('click',function(e){
+        let valid = true;
+
+        let err_msg = document.getElementsByClassName('err_msg');
+        // console.log(err_msg);
+        for(let er=0; er < err_msg.length; er++){
+          err_msg[er].textContent = '';
+        }
+        let name_value = document.getElementById('input_name').value;
+        
+        
+        if(name_value.trim() == ''){
+          valid = false;
+
+          let name_err = document.getElementById('name_err');
+          name_err.textContent = '名前が入力されていません';
+        }
+
+        let age_value = document.getElementById('input_age').value;
+
+        if (age_value.match(/[^0-9]/g)
+              ||
+            parseInt(age_value, 10) + "" != age_value
+        ) {
+            valid = false;
+            document.getElementById('age_err').textContent = '年齢は数字のみ入力してください';
+        }
+
+        // let color_list = document.getElementsByName('color');
+        let color_list = document.querySelectorAll("input[type='checkbox'][name='color[]']");
+
+        let check_flag = false;
+        for(let cl=0; cl < color_list.length; cl++){
+          if(color_list[cl].checked){
+
+            check_flag = true;
+            break;
+          }
+        }
+
+        if(!check_flag){
+          valid = false;
+           document.getElementById('color_err').textContent = 'チェックされていません';
+          
+        }
+
+        if(valid){
+          document.input_form.submit();
+        }
+
+      });
+    });
+    
+    
+  </script>
+</body>
+</html>
