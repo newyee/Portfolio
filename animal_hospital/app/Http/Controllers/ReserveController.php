@@ -10,18 +10,15 @@ use Session;
 
 class ReserveController extends Controller
 {
-		//
-				
+
 		// private $global_dates;
 		
 
 		public function getCalendarDates($year, $month)
 			{
 				$date = Carbon::parse("$year-$month-1")->locale('ja_JP');
-				// dd($date);
 				$last = $date->copy()->startOfWeek();
 				$count = $last->diffInDays($date->copy()->endOfMonth()->endOfWeek()) + 1;
-				// dd($count,$date);
 				for ($i = 0; $i < $count; $i++, $last->addDay()) {
 						$dates[] = $last->copy();
 				}
@@ -32,11 +29,9 @@ class ReserveController extends Controller
 
 		public function reserve_date(Request $request)
 		{
-			// $check = $request->check_page;
-			// dd($check);
-			// dd($request->visiting_purpose);
+;
 			$visiting_purpose = $request->visiting_purpose;		
-			// dd($visiting_purpose);
+
 			
 			$current_date = new Carbon();
 			$current_year = $current_date->year;
@@ -44,33 +39,27 @@ class ReserveController extends Controller
 
 
 			$current_day = $current_date->format('d');
-			// dd($current_year);
+			
 
 			$dates = $this->getCalendarDates($current_year,$current_month);
-			// dd($dates);
-			// $dates = $this->global_dates;
-			// dd($this->global_dates);
+			
 			//テーブルに登録されている予約された日付(全て)
 			$reservations = Reservation::get(['reservation_date']);
-			// dd($reservations);
+			
 			
 			$reservations_array = $reservations->toArray();
-			// dd($reservations_array);
+			
 			$current_reserved_date = [];
 			foreach($reservations_array as $key=> $value ){
-				//Carbonオブジャクトとして取得
-				// var_dump($value);
+				
 				$reserved_date[] = Carbon::parse($value['reservation_date']);
 
 				if($reserved_date[$key]->month == $current_month){	
 
-					// var_dump($reserved_date[$key]);
-					//今月の予約された時間帯					
 					$current_reserved_date[] = $reserved_date[$key];
 				}
 			}
-			// dd();
-			// dd($current_reserved_date);
+			
 			//日付ごとのデータ
 			$grouped_reserved_dates = [];
 			foreach($current_reserved_date as $reserved_date){
@@ -91,48 +80,7 @@ class ReserveController extends Controller
 				}
 			}
 			
-			// dd($is_reservation);
-
-			//予約可能時間
-			// $time = Carbon::createFromTime(10);
-
-			// // dd($current_reserved_date);
-			// for($i =0; $i < 17; $i++){
-				
-			// 	// dd($time);
-			// 	// var_dump($time);
-
-			// 	if(!$time->between(Carbon::createFromTime(12,00,0),Carbon::createFromTime(13,30,0))){
-			// 		// var_dump($time);
-			// 		$available_time_zone[] = $time->copy();	
-					
-			// 	}
-
-			// 	$time = $time->addMinutes(30);
-				
-
-			// }
-
-			
-			// dd($available_time_zone);
-			// $reserved_count = 0;
-			// // dd($available_time_zone);
-			// foreach($available_time_zone as $reserved_day){
-			// 	foreach($current_reserved_date as $current_day){
-			// 		if($reserved_day->format('Y:m:d H:i') == $current_day->format('Y:m:d H:i')){
-			// 			// var_dump($reserved_day);
-						
-			// 			$reserved_count+=1;
-
-			// 		}
-			// 	}
-			// }
-			
-			// dd($dates);
-			// echo $dates[0]->format('Y-m-d');
-			// dd();
-			// dd($is_reservation);
-			// dd($current_date);
+		
 			return view('reserve.calendar',compact('dates','current_date','current_reserved_date','is_reservation','visiting_purpose'));
 
 		}
@@ -203,12 +151,11 @@ class ReserveController extends Controller
 
 			}
 
-			// dd($reserve_date);
 
-			// dd($reserve_date);
+
 			$reserved_time_list = Reservation::where('reservation_date','like',$reserve_date.'%')->pluck('reservation_date');
 
-			// dd($reserved_time_list);
+			
 
 			//carbonオブジェクトに変換
 			foreach($reserved_time_list as $key => $reserved_time){
@@ -226,19 +173,13 @@ class ReserveController extends Controller
 
 			
 			$day_of_number = $reserve_date->dayOfWeek;
-			// dd($day_of_number);
 			
-			// $reserved_time = $reserved_time_list[0]->format('Y-m-d');
-			
-			// dd($reserved_time);
 
 			// 予約可能時間
 			$time = Carbon::parse($date_format.'10:00:00');
 			// dd($time);
 			for($i =0; $i < 17; $i++){
 				
-				// dd($time);
-				// var_dump($time);
 
 				if(!$time->between(Carbon::parse($date_format.'12:00:0'),Carbon::parse($date_format.'13:30:0'))){
 					// var_dump($time);
@@ -249,7 +190,7 @@ class ReserveController extends Controller
 				$time = $time->addMinutes(30);
 
 			}
-			// dd($available_time_zone);
+
 
 			// dd($reserved_time_list);
 			$occupied = [];
@@ -262,13 +203,10 @@ class ReserveController extends Controller
 					if($time == $time_zone_format){
 						$occupied[] = $time_zone_format;
 					}
-
-	
 				}
 
 			}
-			// dd($occupied);
-			// dd($occupied);
+
 			switch($day_of_number){
 				case 0:
 				$day = '日';
@@ -292,9 +230,7 @@ class ReserveController extends Controller
 				$day = '土';
 				break;
 			}
-			// dd($occupied);
-			// dd($is_reservation);
-			// dd($occupied);
+			
 			return view('reserve.reservation_time',compact('date_display_formt','day','occupied'));
 
 		}
@@ -305,19 +241,12 @@ class ReserveController extends Controller
 			
 			// dd()
 			$reserved_date = $request->date;
-			// dd($reserved_date);
-			// dd($request->dayOfWeek);
+			
 			$reserved_dayOfWeek = $request->dayOfWeek;
 
 			$request->session()->put(['reserved_time' => $reserved_time,'reserved_date' => $reserved_date,'reserved_dayOfWeek' => $reserved_dayOfWeek]);
 
-			// $input_form_datas = '';
-			// $input_form_datas = $request->all();
-			// $tel = implode('-',$input_form_datas['tel']);
-			// // dd($input_form_datas);
-			// // dd('ok');
-			// unset($input_form_datas['tel']);
-			// dd($tel);
+			
 			return view('reserve.reservation_info',compact('reserved_time','reserved_date','reserved_dayOfWeek'));
 				
 		}
@@ -328,24 +257,11 @@ class ReserveController extends Controller
 
 		
 		 function confirm_form_data(Request $request){
-			// $last_name = $request->last_name;
-			// $first_name = $request->first_name;
-			// $last_name_furigana = $request->last_name_furigana;
-			// $first_name_furigana = $request->first_name_furigana;
-			// $input_animal_name = $request->input_animal_name;
-			// $animal_type = $request->animal_type;
-			// $tel = $request->tel;
-			// $mail = $request->mail;
-			// $other = $request -> other;
+			
 			$reserved_date = $request->reserved_date;
 			$reserved_dayOfWeek = $request->reserved_dayOfWeek;
 			$reserved_time = $request->reserved_time;
-			// dd($reserved_time);
-			// dd($reserved_date);
-			// dd($reserved_dayOfweek);
-			// $messages = [
-			// 	'tel.0.' => '電話番号'
-			// ]
+			
 
 			$message = [
 				'other.required_if' => '種類(犬、猫など)にその他を指定した場合は、その他の項目に動物種名を入力してください。',
@@ -368,23 +284,13 @@ class ReserveController extends Controller
 
 				return redirect('/reserve/infomation')->withErrors($validator)->withInput();
 
-				// $instance = redirect('/reserve/reserve_info');
-				// // dd('ok');
-				// $validation_data = $instance->withErrors($validator)->withInput();
-				// dd($validation_data);
-				// return view('reserve.reservation_info',compact('validation_data','reserved_date','reserved_dayOfWeek','reserved_time'));
-				// var_dump($errors);
-				// exit();
 			}
 
-			// dd($request->all());
 			$input_form_datas = '';
 			$input_form_datas = $request->all();
 			$tel = implode('-',$input_form_datas['tel']);
-			// dd($input_form_datas);
-			// dd('ok');
+			
 			unset($input_form_datas['tel']);
-			// dd($tel);
 			return view('reserve.confirm',compact('input_form_datas','tel'));
 		}
 
@@ -395,8 +301,6 @@ class ReserveController extends Controller
 			
 			$reserve_time = $request->reserve_time;
 			$reserved_date_insert = $reserve_date . $reserve_time;
-			// ////
-			// dd();
 			$reserve_dayOfWeek = $request->reserve_dayOfWeek;
 			// dd($reserve_dayOfWeek);
 			$owner_name = $request->owner_name;
@@ -411,44 +315,18 @@ class ReserveController extends Controller
 			
 			$other = $request->other;
 		
-			// dd($other);
-			// dd($/reserved_date);
+			
 			$reserved_date_insert = str_replace(['年','月','日','時','分'],['-','-',' ', ':' , ''],$reserved_date_insert);
 
-			// dd($reserved_date_insert);
 			$reservation_record = Reservation::create(
 				['reservation_date' => $reserved_date_insert,'owner_name' => $owner_name,'owner_name_furigana' => $owner_name_furigana,
 					'animal_name' => $animal_name,'animal_type' => $animal_type,'tel' => $tel,'mailaddress' => $mail,'other' => $other
 			]);
-
-			// dd($reserve_dayOfWeek);
-			//  $test = redirect ('/reserve/complete/display');
-			// var_dump(redirect('/reserve/complete/display'));
-
 			
 			 return redirect('/reserve/complete/display')->withInput($request->all());
-
-			// dd();
-
-			// dd($test->getRequest()->request->parameters);
-			// dd($test);
-			// // var_dump($test->request->request->parameters);
-			// dd();
-			// //dd($test)///;
-			
-			// $att = $test->attributes;
-			// var_dump($att);
-			// dd();
-			// dd(method_exists($test,'withInput'));
-
-			// return view('reserve.complete',compact(
-			// 	'reserve_date','reserve_dayOfWeek','reserve_time','owner_name','owner_name_furigana','animal_type',
-			// 	'animal_name','tel','mail','other'
-			// ));
 		}
 		
-		//sql
-		// INSERT INTO `reservations`(`reservation_date`, `owner_name`, `owner_name_furigana`, `animal_name`, `animal_species`, `tel`, `mailadress`) VALUES ('201906111430','takahasi','タカハシ','siro','inu','0809992222','test@gmail.com');		
+			
 		
 		public function complete_display(Request $request){
 			$datas = $request->old();
@@ -489,17 +367,6 @@ class ReserveController extends Controller
 
 		public function redirect_index(Request $request){
 
-			// dd(Request::query());
-
-			// $query = \Illuminate\Support\Facades\Request::query();
-			
-
-			// if(empty($query)){
-				
-			// 	return redirect('/')->withInput($err_msg);	
-			// }
-
-			
 			$err_msg = ['err_msg_first' => '認証に失敗しました','err_msg_secound' => '初めからやり直してください'];
 
 			$reserved_time = $request->session()->get('reserved_time');
