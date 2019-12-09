@@ -25,7 +25,7 @@ SECRET_KEY = '&0mxn&txtu2$8@^+(_jfzld=az)k@-fh@enm@!!ae1u!ttv(0x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['13.230.148.74']
 
 
 # Application definition
@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'mysite5.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'pollsdb',
+        'USER': 'shinya',
+        'PASSWORD': 'Asdf03151',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -119,4 +123,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+<<<<<<< HEAD
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+=======
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+>>>>>>> d048751ab8e574b33771c6e29c95c41c532342b7
